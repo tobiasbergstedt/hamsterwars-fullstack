@@ -1,0 +1,141 @@
+header {
+	background-color: var(--header-bg);
+	height: var(--header-height);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	box-shadow: 0 0 0.75em 0.5em rgba(0, 0, 0, 0.5);
+}
+
+header img {
+	max-height: 100px;
+	max-width: 100%;
+	filter: drop-shadow(0.125rem 0.125rem 0.125rem rgba(34, 34, 34, 0.8));
+}
+
+header nav a {
+	font-size: 1.3em;
+	height: 30px;
+}
+
+.navigation {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	padding: 0;
+	background-color: var(--header-bg);
+	color: black;
+}
+
+.navigation-menu ul {
+	display: none;
+	position: absolute;
+	top: 75px;
+	left: 0;
+	flex-direction: column;
+	width: 100%;
+	height: calc(100vh - var(--header-height));
+	background-color: white;
+	list-style: none;
+}
+
+.navigation-menu.expanded ul {
+	display: block;
+	z-index: 1;
+}
+
+.navigation-menu li {
+	text-align: center;
+	margin: 0;
+}
+
+.navigation-menu li .active {
+	background-color: var(--nav-hover-bg);
+	color: var(--yellow);
+}
+
+.navigation-menu li a {
+	color: var(--nav-bg);
+	width: 100%;
+	padding: 1.2rem 0;
+	text-decoration: none;
+	display: block;
+	transition: padding 0.4s, background-color 0.5s, color 0.5s;
+}
+
+.navigation-menu li a:hover {
+	background-color: var(--nav-bg);
+	color: var(--yellow);
+	padding-left: 0.75em;
+}
+
+.navigation-menu li:hover {
+	cursor: pointer;
+	transition: padding 0.4s, background-color 0.5s, color 0.5s;
+}
+
+.hamburger {
+	display: block;
+	border: 0;
+	height: 60px;
+	width: 60px;
+	padding: 0.5rem;
+	background-color: #05493a;
+	border-radius: 20%;
+	box-shadow: 2px 2px 5px rgba(9, 9, 9, 0.5);
+	cursor: pointer;
+	transition: background-color 0.2s ease-in-out;
+	position: absolute;
+	top: 50%;
+	left: 10px;
+	transform: translateY(-50%);
+}
+
+.hamburger:hover {
+	background-color: var(--nav-hover-bg);
+}
+
+@media screen and (min-width: 768px) {
+	.navigation-menu ul {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		position: absolute;
+		top: 0;
+		background-color: var(--nav-bg);
+		height: calc(var(--header-height) - 100px);
+	}
+
+	.navigation-menu ul li {
+		height: 100%;
+		width: 123px;
+	}
+
+	.navigation-menu ul li .active {
+		background-color: var(--header-bg);
+		color: black;
+	}
+
+	.navigation-menu ul li a {
+		color: var(--yellow);
+		height: 100%;
+		width: 100%;
+		padding: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.navigation-menu ul li a:hover {
+		background-color: var(--nav-hover-bg);
+		color: var(--yellow);
+		padding: 0;
+	}
+
+	.hamburger {
+		display: none;
+	}
+}

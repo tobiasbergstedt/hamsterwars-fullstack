@@ -1,0 +1,158 @@
+.info-box {
+	background-color: var(--header-bg);
+	padding: var(--main-padding);
+	margin-top: 1.5em;
+}
+
+.info-box p {
+	margin-bottom: 0.5em;
+}
+
+.start-info {
+	padding: var(--main-padding);
+}
+
+.start-info h1 {
+	text-align: center;
+	margin-bottom: 0.25em;
+}
+
+.start-info h1 span:nth-child(2) {
+	display: block;
+	color: #0e5b00;
+}
+
+.start-info p {
+	margin-bottom: 0.5em;
+}
+
+.start-info .last-p {
+	margin-bottom: 0;
+}
+
+.start .most-winnerest {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background: linear-gradient(
+		to bottom,
+		var(--nav-bg) 0%,
+		var(--header-bg) 50%,
+		#f6f6f6 50%,
+		#ffffff 100%
+	);
+	color: var(--yellow);
+	padding: 0.75em;
+	margin: 1em;
+	border-radius: 2em;
+	box-shadow: 0 0.35em 0.75em rgba(0, 0, 0, 0.7);
+}
+
+.start .most-winnerest h2 {
+	position: relative;
+	margin-top: 0;
+	margin-bottom: 0.25rem;
+	font-size: 2.5em;
+}
+
+.start .most-winnerest h2 .win-age {
+	font-size: 1.4rem;
+}
+
+.start .most-winnerest .crown {
+	position: absolute;
+	top: -0.7em;
+	left: -0.75em;
+	transform: rotateZ(-20deg);
+	filter: drop-shadow(0.2rem 0.2rem 0.2rem rgba(34, 34, 34, 0.747));
+	width: 70px;
+}
+
+.most-winnerest p {
+	margin-bottom: 1em;
+}
+
+.start .most-winnerest .cutest-pic {
+	max-width: 93%;
+	max-height: 200px;
+	border-radius: 1em;
+	box-shadow: 0 0.35em 0.75em rgba(0, 0, 0, 0.7);
+	margin-bottom: 0.75em;
+}
+
+.statistics-div {
+	display: flex;
+	width: 100%;
+	position: relative;
+}
+
+.statistics-div p:nth-child(2) {
+	position: absolute;
+	right: 0;
+}
+
+.graph-div {
+	display: flex;
+	background: linear-gradient(to bottom, lightgrey 0%, rgb(121, 121, 121) 100%);
+	padding: 4px;
+	border-radius: 0.5em;
+	overflow: hidden;
+	box-shadow: 0.2em 0.2em 0.35em rgba(0, 0, 0, 0.5);
+}
+
+.graph1 {
+	height: 10px;
+	background: linear-gradient(to top, #0e5b00 0%, var(--header-bg) 100%);
+	margin-right: 2px;
+	border-radius: 0.25em 0 0 0.25em;
+}
+.graph2 {
+	height: 10px;
+	background: linear-gradient(
+		to bottom,
+		var(--red-wildcard) 0%,
+		rgb(168, 0, 0) 100%
+	);
+	margin-left: 2px;
+	border-radius: 0 0.25em 0.25em 0;
+}
+
+.most-winnerest .winnerest-info {
+	margin-top: 0.5em;
+	width: 90%;
+}
+
+.most-winnerest .winnerest-info p {
+	color: black;
+	margin-bottom: 0.5em;
+}
+
+.most-winnerest .winnerest-info .wins {
+	font-weight: 600;
+	color: #0e5b00;
+}
+
+.most-winnerest .winnerest-info .losses {
+	font-weight: 600;
+	color: var(--red-wildcard);
+}
+
+@media screen and (min-width: 767px) {
+	.start-info {
+		padding: 0;
+	}
+
+	.start-info h1 span {
+		display: inline;
+	}
+
+	.start .most-winnerest img {
+		width: 75%;
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.start .most-winnerest img {
+		width: 65%;
+	}
+}

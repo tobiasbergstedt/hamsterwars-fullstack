@@ -1,0 +1,55 @@
+/* color-scheme {
+body-bg: #fbefbf; (yellow/beige)
+header-bg: #7fa894; (light green)
+nav-bg: #26655c;  (dark green)
+nav:hover-bg: #0c3a45 (dark blue)
+wildcard: #eb2c3d;  (red)
+} */
+
+:root {
+	--header-height: 175px;
+	--header-bg: #7fa894;
+	--nav-bg: #26655c;
+	--nav-hover-bg: #0c3a45;
+	--yellow: #fbefbf;
+	--red-wildcard: #eb2c3d;
+	--main-padding: 1em;
+	--main-margin: 0.5em;
+}
+
+/* Mobile first styling*/
+
+.app {
+	min-height: 100vh;
+	background-color: white;
+	overflow: hidden;
+}
+
+main {
+	min-height: calc(
+		100vh -
+			calc(
+				var(--header-height) -100px + (2 * var(--main-padding)) + (2 *
+							var(--main-margin))
+			)
+	);
+}
+
+.battle .hamster-object img {
+	width: 20em;
+}
+
+/* Media query for tablet size screens */
+@media screen and (min-width: 767px) {
+	main {
+		padding: var(--main-padding);
+	}
+	.app {
+		border-radius: 2em;
+		min-height: calc(100vh - (2 * var(--main-margin)));
+	}
+}
+
+/* Media query for desktop size screens */
+@media screen and (min-width: 1024px) {
+}

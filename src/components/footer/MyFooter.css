@@ -1,0 +1,13 @@
+.my-footer {
+	height: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 0.9em;
+	background-color: var(--nav-bg);
+	color: var(--yellow);
+}
+
+.my-footer p {
+	font-size: 1em;
+}
