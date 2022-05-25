@@ -1,31 +1,33 @@
 import { useState } from 'react'
 import './App.css'
-import { NavLink, Routes, Route } from 'react-router-dom'
+import { Navigate, Routes, Route } from 'react-router-dom'
 import Start from './components/start/Start'
-import Settings from './components/Settings'
-import About from './components/About'
+import Gallery from './components/gallery/Gallery'
+import Statistics from './components/statistics/Statistics'
+import History from './components/history/History'
 import NotFound from './components/NotFound'
-import ShowCart from './components/ShowCart'
-import Product from './components/Product'
 import SingleProduct from './components/SingleProduct'
 import DropDown from './components/dropdown/Dropdown'
 import MyFooter from './components/footer/MyFooter'
+import SingleHamster from './components/gallery/SingleHamster'
+import Battle from './components/battle/Battle'
 
 const App = () => {
   return (
-    <div className="app">
+    <div className='app'>
       <header>
         <DropDown />
       </header>
       <main>
         <Routes>
-          <Route path='/about' element={<About />} />
-          <Route path='/settings' element={<Settings />} />
-          <Route path='/cart' element={<ShowCart />} />
-          <Route path='/:product' element={<Product />} />
-          <Route path='/products/:productid' element={<SingleProduct />} />
+          <Route path='/statistics' element={<Statistics />} />
+          <Route path='/history' element={<History />} />
+          <Route path='/gallery' element={<Gallery />} />
+          <Route path='/gallery/:hamsterid' element={<SingleHamster />} />
+          <Route path='/battle' element={<Battle />} />
           <Route path='/' element={<Start />} />
-          <Route path='*' element={<NotFound />} />
+          <Route path='*' element={<Navigate to='/404' />
+} />
           <Route path='/404' element={<NotFound />} />
         </Routes>
       </main>

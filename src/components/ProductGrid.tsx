@@ -8,7 +8,7 @@ const ProductGrid = () => {
   const [ products, setProducts] = useRecoilState(productsAtom)
 
   return (
-    <div className="product-grid">
+    <div className='product-grid'>
       {products.map(product => (
         <div key={product.id} className='product'>
           <Link to={'products/'+ product.id}>
@@ -19,7 +19,7 @@ const ProductGrid = () => {
         </div>
       ))}
     </div>
-    // <div className="product-grid">
+    // <div className='product-grid'>
     //   {products.map(product => (
     //     <div key={product.id} className='product'>
     //       <Link to={product.id}>

@@ -7,12 +7,12 @@ const Product = () => {
   let myProduct = data.find(product => product.id === params.product)
 
   return (
-    <div className="product-grid">
+    <div className='product-grid'>
 
       {
         (myProduct) ? (
             <>
-              <img src={myProduct.img} alt="" />
+              <img src={myProduct.img} alt='' />
               <p>{myProduct.name}</p>
             </>
         ) : `No item with article number ${params.product} found.`

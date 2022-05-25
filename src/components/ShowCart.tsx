@@ -1,6 +1,8 @@
 import { useRecoilState } from 'recoil'
 import { cartAtom } from '../atoms/Cart'
-import { useState, useEffect, useRef } from "react"
+import { useState, useEffect, useRef } from 'react'
+
+import { fixUrl } from '../utils'
 
 interface Hamster {
   name: string,
@@ -13,6 +15,17 @@ interface Hamster {
   wins: number,
   defeats: number
 }
+
+
+// För att uppdatera hamster efter matcher
+
+// let newHamster = { ...oldHamster, defeats: oldHamster.defeats + 1, games: oldHamster.games+ 1 }
+
+// setHamster(newHamster)
+
+// använd variabeln newHamster i resten av komponent-funktionen
+
+
 
 const ShowCart = () => {
   const [data, setData] = useState<null | Hamster>(null)
@@ -94,7 +107,7 @@ const ShowCart = () => {
             <br />
             {data.favFood}
             <br />
-            <img src={'/hamsters/' + data.imgName} alt="" />
+            <img src={fixUrl('/img/' + data.imgName)} alt='' />
           </div> : <div>No data yet.</div>}
       {data2 ? <div key={data2.id} className='hamster-object'>
             {data2.name}
@@ -107,7 +120,7 @@ const ShowCart = () => {
             <br />
             {data2.favFood}
             <br />
-            <img src={'/hamsters/' + data2.imgName} alt="" />
+            <img src={fixUrl('/img/' + data2.imgName)} alt='' />
           </div> : <div>No data yet.</div>}
     </div>
   )
@@ -120,7 +133,7 @@ export default ShowCart
 
 // import { useRecoilState } from 'recoil'
 // import { cartAtom } from '../atoms/Cart'
-// import { useState, useEffect } from "react"
+// import { useState, useEffect } from 'react'
 
 // interface Hamster {
 //   name: string,
@@ -166,11 +179,11 @@ export default ShowCart
 //       <h3>Random hamster</h3>
 //       {data !== null ? <div key={data[0].id} className='hamster-object'>
 //             {data[0].name}
-//             <img src={'/hamsters/' + data[0].imgName} alt="" />
+//             <img src={'/hamsters/' + data[0].imgName} alt='' />
 //           </div> : <div>No data yet.</div>}
 //       {data2 ? <div key={data2.id} className='hamster-object'>
 //             {data2.name}
-//             <img src={'/hamsters/' + data2.imgName} alt="" />
+//             <img src={'/hamsters/' + data2.imgName} alt='' />
 //           </div> : <div>No data yet.</div>}
 //     </div>
 //   )

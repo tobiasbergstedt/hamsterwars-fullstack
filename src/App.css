@@ -11,10 +11,12 @@ wildcard: #eb2c3d;  (red)
 	--header-bg: #7fa894;
 	--nav-bg: #26655c;
 	--nav-hover-bg: #0c3a45;
+	--green: #0e5b00;
 	--yellow: #fbefbf;
 	--red-wildcard: #eb2c3d;
 	--main-padding: 1em;
 	--main-margin: 0.5em;
+	--footer-height: 50px;
 }
 
 /* Mobile first styling*/
@@ -37,6 +39,103 @@ main {
 
 .battle .hamster-object img {
 	width: 20em;
+}
+
+.button-yes,
+.button-no {
+	align-items: center;
+	appearance: none;
+	border: 0;
+	border-radius: 6px;
+	box-sizing: border-box;
+	color: white;
+	cursor: pointer;
+	display: inline-flex;
+	font-family: 'JetBrains Mono', monospace;
+	font-size: 18px;
+	height: 40px;
+	justify-content: center;
+	line-height: 1;
+	list-style: none;
+	margin: 0 0.5em 0.25em 0.5em;
+	overflow: hidden;
+	padding-left: 1em;
+	padding-right: 1em;
+	position: relative;
+	text-align: left;
+	text-decoration: none;
+	text-shadow: 0px 0px 4px #000;
+	transition: box-shadow 0.15s, transform 0.15s;
+	user-select: none;
+	-webkit-user-select: none;
+	touch-action: manipulation;
+	white-space: nowrap;
+	will-change: box-shadow, transform;
+}
+
+.button-yes {
+	background-image: radial-gradient(
+		100% 100% at 100% 0,
+		var(--header-bg) 0,
+		var(--nav-bg) 100%
+	);
+	box-shadow: rgba(35, 66, 40, 0.4) 0 2px 4px,
+		rgba(35, 66, 40, 0.3) 0 7px 13px -3px, rgba(21, 77, 60, 0.5) 0 -3px 0 inset;
+}
+
+.button-no {
+	background-image: radial-gradient(
+		100% 100% at 100% 0,
+		rgb(255, 129, 129) 0,
+		var(--red-wildcard) 100%
+	);
+	box-shadow: rgba(35, 66, 40, 0.4) 0 2px 4px,
+		rgba(35, 66, 40, 0.3) 0 7px 13px -3px, rgba(21, 77, 60, 0.5) 0 -3px 0 inset;
+}
+
+.button-yes:hover,
+.button-no:hover {
+	transform: translateY(-2px);
+}
+
+.button-yes:hover {
+	box-shadow: rgba(35, 66, 35, 0.4) 0 4px 8px,
+		rgba(35, 66, 43, 0.3) 0 7px 13px -3px, #438043 0 -3px 0 inset;
+}
+
+.button-no:hover {
+	box-shadow: rgba(66, 35, 35, 0.4) 0 4px 8px,
+		rgba(66, 35, 35, 0.3) 0 7px 13px -3px, #dd0b0b 0 -3px 0 inset;
+}
+
+.button-yes:active,
+.button-no:active {
+	transform: translateY(2px);
+}
+
+.button-yes:active {
+	box-shadow: #a2c7a8 0 3px 7px inset;
+}
+
+.button-yes:disabled {
+	background-image: radial-gradient(
+		100% 100% at 100% 0,
+		rgb(182, 182, 182) 0,
+		rgb(110, 110, 110) 100%
+	);
+	box-shadow: rgba(58, 58, 58, 0.4) 0 2px 4px,
+		rgba(68, 68, 68, 0.3) 0 7px 13px -3px, rgba(71, 71, 71, 0.5) 0 -3px 0 inset;
+	color: rgb(88, 88, 88);
+	text-shadow: none;
+}
+
+.button-yes:disabled:hover {
+	cursor: default;
+	transform: translateY(0);
+}
+
+.button-no:active {
+	box-shadow: #c7a2a2 0 3px 7px inset;
 }
 
 /* Media query for tablet size screens */

@@ -1,0 +1,124 @@
+.battle {
+	min-height: calc(100vh - calc(var(--header-height) + var(--footer-height)));
+}
+
+.battle,
+.battle .hamster-object,
+.battle .disabled-hamster {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.battle {
+	padding: var(--main-padding);
+}
+
+.battle h1 {
+	font-size: 1.6em;
+	color: var(--nav-hover-bg);
+}
+
+.battle p {
+	color: var(--nav-hover-bg);
+	margin-bottom: 1em;
+}
+
+.battle .winner-div {
+	font-size: 1.1em;
+	margin-top: -0.5em;
+	margin-bottom: 0.75em;
+	color: var(--nav-hover-bg);
+}
+
+.battle .new-game-button {
+	background-image: radial-gradient(
+		100% 100% at 100% 0,
+		#657ec4 0,
+		#1a3c9b 100%
+	);
+	box-shadow: rgba(12, 27, 69, 0.6) 0 2px 4px,
+		rgba(12, 27, 69, 0.45) 0 7px 13px -3px, rgba(21, 56, 77, 0.5) 0 -3px 0 inset;
+	margin-bottom: 1em;
+}
+
+.battle .new-game-button:hover {
+	box-shadow: rgba(35, 46, 66, 0.4) 0 4px 8px,
+		rgba(35, 45, 66, 0.3) 0 7px 13px -3px, #434c80 0 -3px 0 inset;
+}
+
+.battle .new-game-button:active {
+	box-shadow: #a2abc7 0 3px 7px inset;
+}
+
+.battle .hamster-object {
+	cursor: pointer;
+}
+
+.battle .hamster-object,
+.battle .disabled-hamster {
+	padding-bottom: 1em;
+	background: linear-gradient(
+		45deg,
+		var(--nav-hover-bg) 0%,
+		var(--nav-bg) 100%
+	);
+	color: var(--yellow);
+	overflow: hidden;
+	width: 100%;
+	border-radius: 1em;
+	box-shadow: 0 0.35em 0.75em rgba(0, 0, 0, 0.7);
+	transition: margin 0.2s, opacity 0.2s;
+}
+
+.battle .hamster-object:hover {
+	opacity: 0.8;
+	margin: -0.5em 0 0.5em 0;
+}
+
+.battle .hamster-object h2,
+.battle .disabled-hamster h2 {
+	font-size: 1.6em;
+	filter: drop-shadow(0.25rem 0.25rem 0.25rem rgb(0, 0, 0));
+	margin: 0.5em 0 0 0;
+}
+
+.battle .hamster-object p,
+.battle .disabled-hamster p {
+	color: var(--yellow);
+	margin: 0;
+}
+
+.battle .battle-icon {
+	max-width: 50px;
+	filter: invert(16%) sepia(56%) saturate(653%) hue-rotate(144deg)
+		brightness(98%) contrast(94%);
+	margin: 1em;
+	transition: transform 2s ease-in-out;
+}
+
+.battle .battle-icon:hover {
+	transform: rotate(360deg);
+}
+
+.battle .hamster-object img,
+.battle .disabled-hamster img {
+	display: block;
+	max-width: 100%;
+	max-height: 200px;
+	width: auto;
+	height: auto;
+	box-shadow: 0 0.35em 0.75em rgba(0, 0, 0, 0.7);
+}
+
+.hamster-object .statistics-div,
+.disabled-hamster .statistics-div {
+	margin-bottom: 0.5em;
+}
+
+.hamster-object .statistics-div,
+.disabled-hamster .statistics-div,
+.hamster-object .graph-div,
+.disabled-hamster .graph-div {
+	width: 90%;
+}

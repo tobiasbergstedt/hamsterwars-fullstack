@@ -1,0 +1,84 @@
+.single-hamster {
+	min-height: calc(100vh - var(--header-height) - var(--footer-height));
+	padding: 1em 1em 0 1em;
+}
+
+.single-hamster .arrow-back {
+	display: flex;
+	align-items: center;
+	margin-left: 0.3em;
+	margin-bottom: 0.5em;
+	text-decoration: none;
+	color: black;
+	transition: color 0.3s, margin 0.3s;
+}
+
+.single-hamster .arrow-back:hover {
+	margin-left: 0.5em;
+	color: var(--nav-bg);
+}
+
+.single-hamster .arrow-back i {
+	font-size: 2em;
+	margin-right: 0.25em;
+}
+
+.single-hamster p {
+	margin-bottom: 0em;
+}
+
+.single-hamster .hamster-info p {
+	margin-bottom: 1em;
+}
+
+.single-hamster .hamster-info {
+	margin: 0 0 1em 0;
+}
+
+.hamster-info .hamster-details {
+	margin-top: 0.5em;
+	width: 90%;
+}
+
+.hamster-info .hamster-details p {
+	color: black;
+	margin-bottom: 0.5em;
+}
+
+.hamster-info .hamster-details .wins {
+	font-weight: 600;
+	color: var(--green);
+}
+
+.hamster-info .hamster-details .losses {
+	font-weight: 600;
+	color: var(--red-wildcard);
+}
+
+.single-hamster .match-info {
+	display: flex;
+	flex-direction: column;
+	background-color: white;
+	color: var(--nav-bg);
+	padding: 0.75em;
+	margin: 0 0 1em 0;
+	border-radius: 2em;
+	box-shadow: 0 0.35em 0.75em rgba(0, 0, 0, 0.7);
+}
+
+.single-hamster .match-info h3 {
+	align-self: center;
+}
+
+.match-info .single-match {
+	margin-top: 0.5em;
+	border-bottom: 2px solid var(--nav-bg);
+}
+
+.match-info .single-match:last-child {
+	border-bottom: none;
+}
+
+.match-info .single-match p:last-child {
+	margin-bottom: 0.5em;
+}
