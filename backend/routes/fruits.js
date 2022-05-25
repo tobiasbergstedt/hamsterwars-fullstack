@@ -1,4 +1,4 @@
-const express = require('express')
+import express from 'express'
 const router = express.Router()
 
 const data = [
@@ -22,4 +22,4 @@ router.post('/', (req, res) => {
 	res.sendStatus(200)
 })
 
-module.exports = router
+export default router

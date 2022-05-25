@@ -13,7 +13,7 @@ const Start = () => {
 
   useEffect(() => {
     async function getData() {
-      const response: Response = await fetch('http://tobias-hamsterwars.herokuapp.com/hamsters/cutest')
+      const response: Response = await fetch(fixUrl('/hamsters/cutest'))
       const apiData: any = await response.json()
       setHamsterData(apiData as Hamster[])
     }

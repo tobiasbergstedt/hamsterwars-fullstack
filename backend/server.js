@@ -7,7 +7,7 @@ const app = express()
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
-const fruitsRouter = require('./routes/fruits.js')
+import fruitsRouter from './routes/fruits.js'
 import hamsters from './routes/hamsters.js'
 import matches from './routes/matches.js'
 import matchWinners from './routes/matchWinners.js'
