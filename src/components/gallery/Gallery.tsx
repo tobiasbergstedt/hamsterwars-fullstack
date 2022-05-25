@@ -31,7 +31,7 @@ const Gallery = () => {
 
   useEffect(() => {
     async function getData() {
-      const response: Response = await fetch('http://tobias-hamsterwars.herokuapp.com/hamsters')
+      const response: Response = await fetch(fixUrl('/hamsters'))
       const apiData: any = await response.json()
       setData(apiData as Hamster[])
       setAllHamstersData(apiData as Hamster[])

@@ -19,11 +19,11 @@ const SingleHamster = () => {
 
   useEffect(() => {
     async function getData() {
-      const response: Response = await fetch('http://tobias-hamsterwars.herokuapp.com/hamsters/' + params.hamsterid)
+      const response: Response = await fetch(fixUrl('/hamsters/' + params.hamsterid))
       const apiData: any = await response.json()
       setHamsterData(apiData as Hamster)
 
-      const matchwinnerResponse: Response = await fetch('http://tobias-hamsterwars.herokuapp.com/matchWinners/' + params.hamsterid)
+      const matchwinnerResponse: Response = await fetch(fixUrl('/matchWinners/' + params.hamsterid))
       const apiMatchData: any = await matchwinnerResponse.json()
       setMatchData(apiMatchData as Match[])
     }

@@ -18,7 +18,7 @@ const GalleryObject = (props: Props) => {
 
 
   const handleRemoveHamster = () => {
-    fetch('http://tobias-hamsterwars.herokuapp.com/hamsters/' + props.id, {
+    fetch(fixUrl('/hamsters/' + props.id), {
       method: 'DELETE'
     })
     props.removeItem(props.id)

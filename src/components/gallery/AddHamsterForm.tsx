@@ -119,7 +119,7 @@ const AddHamsterForm = (props: Props) => {
   }, [imgNumber])
 
   const handleAddHamster = async () => {
-    await fetch('http://tobias-hamsterwars.herokuapp.com/hamsters', {
+    await fetch(fixUrl('/hamsters'), {
       method: 'POST',
       headers: {
         'Accept': 'application/json',

@@ -34,11 +34,11 @@ const Battle = () => {
   useEffect(() => { dataRef.current = hamster })
   useEffect(() => {
     async function getRandomHamster() {
-      const response: Response = await fetch('http://tobias-hamsterwars.herokuapp.com/hamsters/random')
+      const response: Response = await fetch(fixUrl('/hamsters/random'))
       const apiData: any = await response.json()
       setHamster(apiData as Hamster)
 
-      const response2: Response = await fetch('http://tobias-hamsterwars.herokuapp.com/hamsters/random')
+      const response2: Response = await fetch(fixUrl('/hamsters/random'))
       const apihamster2: any = await response2.json()
       if (dataRef.current !== null && (apihamster2.id === dataRef.current.id)) {
         console.log('Duplicate!');
@@ -76,7 +76,7 @@ const Battle = () => {
             let newHamster2 = { ...hamster2, defeats: hamster2.defeats + 1, games: hamster2.games + 1 }
 
             const updateHamster = async (updatedHamster: Hamster) => {
-              await fetch('http://tobias-hamsterwars.herokuapp.com/hamsters/'+ updatedHamster.id, {
+              await fetch(fixUrl('/hamsters/' + updatedHamster.id), {
                 method: 'PUT',
                 headers: {
                   'Content-Type': 'application/json'
@@ -92,7 +92,7 @@ const Battle = () => {
             const addMatchResult = async () => {
               let matchObject = {winnerId: hamster.id, loserId: hamster2.id}
 
-              await fetch('http://tobias-hamsterwars.herokuapp.com/matches/', {
+              await fetch(fixUrl('/matches'), {
                 method: 'POST',
                 headers: {
                   'Content-Type': 'application/json'
@@ -107,7 +107,7 @@ const Battle = () => {
             let newHamster2 = { ...hamster2, wins: hamster2.wins + 1, games: hamster2.games + 1 }
 
             const updateHamster = async (updatedHamster: Hamster) => {
-              await fetch('http://tobias-hamsterwars.herokuapp.com/hamsters/'+ updatedHamster.id, {
+              await fetch(fixUrl('/hamsters/' + updatedHamster.id), {
                 method: 'PUT',
                 headers: {
                   'Content-Type': 'application/json'
@@ -123,7 +123,7 @@ const Battle = () => {
             const addMatchResult = async () => {
               let matchObject = {winnerId: hamster2.id, loserId: hamster.id}
 
-              await fetch('http://tobias-hamsterwars.herokuapp.com/matches/', {
+              await fetch(fixUrl('/matches'), {
                 method: 'POST',
                 headers: {
                   'Content-Type': 'application/json'
