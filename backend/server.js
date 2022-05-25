@@ -1,8 +1,18 @@
-const express = require('express')
+import express from 'express'
+import cors from 'cors'
+import path from 'path'
+import { fileURLToPath } from 'url'
 const app = express()
-const path = require('path')
-const cors = require('cors')
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
+
 const fruitsRouter = require('./routes/fruits.js')
+import hamsters from './routes/hamsters.js'
+import matches from './routes/matches.js'
+import matchWinners from './routes/matchWinners.js'
+import winners from './routes/winners.js'
+import losers from './routes/losers.js'
 
 // Konfiguration
 const PORT = process.env.PORT || 1337
@@ -26,6 +36,11 @@ app.use('/assets/', express.static(path.join(__dirname, '/assets/')))
 
 // Endpoints
 app.use('/fruits', fruitsRouter)
+app.use('/hamsters', hamsters)
+app.use('/matches', matches)
+app.use('/matchWinners', matchWinners)
+app.use('/winners', winners)
+app.use('/losers', losers)
 
 // Övriga endpoints, för att fungera med React Router i frontend
 app.all('*', (req, res) => {

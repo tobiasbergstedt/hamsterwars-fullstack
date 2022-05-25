@@ -37,7 +37,6 @@ const Start = () => {
 
   return (
     <section className='start'>
-      {/* <p>http://tobias-hamsterwars.herokuapp.com/hamsters/cutest</p> */}
       <div className='start-info'>
         <h1><span>Welcome to</span> <span><b>the Hamster Wars</b></span></h1>
         <p>Your number 1 go-to place when it comes to hamsters, hamster battles and all things cute. This website is dedicated to finding the cutest hamster of them all. And to do that, we're going to need <b>YOUR</b> help. </p>
