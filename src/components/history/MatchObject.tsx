@@ -68,7 +68,7 @@ const MatchObject = (props: Props) => {
               <p>X</p>
             </div>
             <div className={deleteVisibleCss}>
-              <p>Are you sure you want to delete?</p>
+              <p>Are you sure you want to delete this battle?</p>
               <button className='button-yes' onClick={handleRemoveMatch}>Yes</button>
               <button className='button-no' onClick={changeVisibility}>No</button>
             </div>
