@@ -84,3 +84,23 @@
 .match-info .single-match p:last-child {
 	margin-bottom: 0.5em;
 }
+
+.single-match .match-defeated {
+	display: flex;
+	align-items: center;
+	margin: 0.5em 0;
+}
+
+.single-match .image-container {
+	margin-left: 1em;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	overflow: hidden;
+}
+
+.single-match .image-container img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
