@@ -7,7 +7,6 @@ const app = express()
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
-import fruitsRouter from './routes/fruits.js'
 import hamsters from './routes/hamsters.js'
 import matches from './routes/matches.js'
 import matchWinners from './routes/matchWinners.js'
@@ -35,7 +34,6 @@ app.use('/assets/', express.static(path.join(__dirname, '/assets/')))
 //End MiddleWare
 
 // Endpoints
-app.use('/fruits', fruitsRouter)
 app.use('/hamsters', hamsters)
 app.use('/matches', matches)
 app.use('/matchWinners', matchWinners)
