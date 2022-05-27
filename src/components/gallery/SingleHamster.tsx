@@ -33,7 +33,7 @@ const SingleHamster = () => {
   let winWidth: number = 0
   let loseWidth: number = 0
   let winsDifference: number = 0
-  if (hamsterData !== null) {
+  if (hamsterData) {
     winWidth = (Math.round((hamsterData.wins/hamsterData.games)*100))
     loseWidth = (Math.round((hamsterData.defeats/hamsterData.games)*100))
     winsDifference = hamsterData.wins - hamsterData.defeats
@@ -41,13 +41,33 @@ const SingleHamster = () => {
 
   let searchArray = [...allHamstersData]
 
+
+//   const getHamstersData = async () => {
+//     const response: Response = await fetch(fixUrl('/hamsters'))
+//       const apiData: any = await response.json()
+//       setHamstersData(apiData as Hamster[])
+//   }
+// console.log(allHamstersData);
+
+//   if (searchArray.length === undefined) {
+//     getHamstersData()
+//     console.log('Undefined');
+
+//   }
+
+//   if (hamstersData !== null) {
+//     searchArray = hamstersData
+//     console.log('Updated hamsters');
+
+//   }
+
   return (
     <div className='single-hamster'>
       <Link to={'/gallery'} className='arrow-back'>
           <i className='fas fa-arrow-left'></i>
           <p>Go back to gallery</p>
       </Link>
-      {hamsterData !== null ?
+      {hamsterData ?
         <div className='hamster'>
           <div className='hamster-info'>
             <h2>{hamsterData.name}, <span className='hamster-age'>age {hamsterData.age}</span></h2>
@@ -73,8 +93,8 @@ const SingleHamster = () => {
       {matchData ? matchData.map((match: Match, index) => (
           <div key={match.id} className='single-match'>
             <p>Match number: {index + 1}</p>
-            <p>Winner: {searchArray.filter((p) => p.id === match.winnerId) ? searchArray.filter((p) => p.id === match.winnerId)[0].name : match.winnerId}</p>
-            <p>Loser: {searchArray.filter((p) => p.id === match.loserId) ? searchArray.filter((p) => p.id === match.loserId)[0].name : match.loserId}</p>
+            <p>Winner: {searchArray.filter((p) => p.id === match.winnerId)[0] !== undefined ? searchArray.filter((p) => p.id === match.winnerId)[0].name : match.winnerId}</p>
+            <p>Loser: {searchArray.filter((p) => p.id === match.loserId)[0] !== undefined ? searchArray.filter((p) => p.id === match.loserId)[0].name : match.loserId}</p>
           </div>
         )) : <div className='single-match'>
         <p>No matches won.</p>

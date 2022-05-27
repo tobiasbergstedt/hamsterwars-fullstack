@@ -3,19 +3,14 @@ import './Gallery.css'
 import { useEffect, useRef, useState } from 'react'
 
 import { fixUrl } from '../../utils'
-import { Fruit } from '../../models/Fruit'
 import { Hamster } from '../../models/Hamster'
 import { AddNewHamster } from '../../models/AddNewHamster'
-import { NewHamster } from '../../models/NewHamster'
 
 import GalleryObject from './GalleryObject'
 import AddHamsterForm from './AddHamsterForm'
-import { useRecoilState } from 'recoil'
-import hamsterAtom from '../../atoms/Hamsters'
 
 const Gallery = () => {
   const [data, setData] = useState<Hamster[] | null | undefined>(null)
-  const [allHamstersData, setAllHamstersData] = useRecoilState<Hamster[]>(hamsterAtom)
   const [tryAgain, setTryAgain] = useState<boolean>(false)
 
   const addHamsterRef = useRef<null | HTMLDivElement>(null)
@@ -34,17 +29,9 @@ const Gallery = () => {
       const response: Response = await fetch(fixUrl('/hamsters'))
       const apiData: any = await response.json()
       setData(apiData as Hamster[])
-      setAllHamstersData(apiData as Hamster[])
     }
     getData()
   },[])
-
-  // useEffect(() => {
-  //   if (data !== null && data !== undefined) {
-  //     setAllHamstersData(data)
-  //     console.log(allHamstersData);
-  //   }
-  // },[data])
 
   let removeContent = (id: string) => {
     let filteredHamsters: Hamster[] | undefined = data?.filter(hamster =>

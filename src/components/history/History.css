@@ -1,0 +1,113 @@
+.history {
+	min-height: calc(
+		100vh - var(--header-height) - var(--footer-height) - 2 *
+			var(--main-padding)
+	);
+	padding: var(--main-padding);
+	color: var(--nav-hover-bg);
+}
+
+.history .history-desc {
+	margin-bottom: 0.75em;
+}
+
+.matches .match-object {
+	position: relative;
+	display: flex;
+	justify-content: space-around;
+	border-radius: 1em;
+	padding: 0.5em 1em;
+	background: linear-gradient(
+		45deg,
+		var(--nav-hover-bg) 0%,
+		var(--nav-bg) 100%
+	);
+	color: var(--yellow);
+	margin-bottom: 0.75em;
+	box-shadow: 0 0.35em 0.75em rgba(0, 0, 0, 0.7);
+	overflow: hidden;
+}
+
+.match-object .left,
+.match-object .right {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.match-object .middle {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.matches .match-object .img-container {
+	width: 75px;
+	height: 75px;
+	border-radius: 50%;
+	overflow: hidden;
+	box-shadow: 0 0.3em 0.6em rgba(0, 0, 0, 0.7);
+	margin: 0.5em 0;
+}
+
+.match-object .img-container img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.match-object .remove-match {
+	background-color: white;
+	color: var(--nav-bg);
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding: 0.5em;
+	outline: 2px solid var(--nav-bg);
+	border-bottom-left-radius: 0.75em;
+	cursor: pointer;
+	user-select: none;
+	transition: padding 0.15s;
+}
+
+.match-object .remove-match:hover {
+	background-color: rgb(240, 240, 240);
+	padding: 0.4em 0.5em 0.6em 0.5em;
+	text-decoration: underline;
+}
+
+.match-object .remove-match:active {
+	background-color: rgb(240, 240, 240);
+	padding: 0.6em 0.5em 0.4em 0.5em;
+	text-decoration: underline;
+}
+
+.match-object .confirm-delete,
+.match-object .confirm-delete-hidden {
+	background-color: rgba(255, 255, 255, 0.85);
+	width: 60%;
+	border-radius: 0.5em;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	text-align: center;
+	padding: 0.5em;
+	transition: left ease-in-out 1s;
+	box-shadow: 0 0.35em 0.75em rgba(0, 0, 0, 0.7);
+}
+
+.match-object .confirm-delete {
+	left: 0;
+	right: 0;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.match-object .confirm-delete-hidden {
+	left: -500px;
+}
+
+.match-object .confirm-delete p,
+.match-object .confirm-delete-hidden p {
+	margin-bottom: 0.5em;
+}

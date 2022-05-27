@@ -64,6 +64,14 @@
 	box-shadow: 0 0.35em 0.75em rgba(0, 0, 0, 0.7);
 }
 
+.gallery-grid .gallery-object img:hover {
+	opacity: 0.8;
+}
+
+.gallery-grid .gallery-object a h2:hover {
+	color: #ffe684;
+}
+
 .gallery-grid .gallery-object h2 {
 	font-size: 1.6em;
 	color: var(--yellow);

@@ -25,7 +25,7 @@ const GalleryObject = (props: Props) => {
   }
 
   return (
-    <div key={props.id} className='gallery-object'>
+    <div className='gallery-object'>
       <Link to={props.id}>
       <img src={fixUrl('/img/' + props.imgName)} alt='' />
       <h2> { props.name } </h2>

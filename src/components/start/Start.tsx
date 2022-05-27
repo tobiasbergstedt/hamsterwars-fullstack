@@ -1,15 +1,40 @@
 import './Start.css'
 
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { useRecoilState } from 'recoil'
+import { useRecoilState, useRecoilValue } from 'recoil'
 
 import { fixUrl } from '../../utils'
 import { Hamster } from '../../models/Hamster'
 import allHamstersAtom from '../../atoms/Hamsters'
+import hamsterAtom from '../../atoms/SingleHamster'
 
 const Start = () => {
-  const [hamsterData, setHamsterData] = useRecoilState<Hamster[]>(allHamstersAtom)
+  // const fakeHamster = { id: 'feiyuhg53487er587', name: 'Derek', age: 5, loves: 'basketball', favFood: 'carrots', imgName: 'hamster-12.jpg', games: 0, wins: 0, defeats: 0 }
+  // const [userRequest, setUserRequest] = useState({
+  //   cutest: [fakeHamster],
+  //   allHamsters: [fakeHamster],
+  // });
+
+  // useEffect(() => {
+  //   Promise.all([fetch(fixUrl('/hamsters/cutest')), fetch(fixUrl('/hamsters'))])
+  //     .then(async response => {
+  //       let cutest1 = await response[0].json()
+  //       let allHamsters1 = await response[1].json()
+  //       let result = [cutest1, allHamsters1]
+  //       return result
+  //     })
+  //     .then(results => {
+  //       setUserRequest({
+  //         cutest: results[0],
+  //         allHamsters: results[1],
+  //       });
+  //       console.log(userRequest.cutest);
+  //     });
+  // }, []);
+
+  // const [allHamstersData, setAllHamstersData] = useRecoilState<Hamster[]>(allHamstersAtom)
+  const [hamsterData, setHamsterData] = useState<Hamster[] | null>(null)
 
   useEffect(() => {
     async function getData() {
@@ -20,6 +45,15 @@ const Start = () => {
     getData()
   },[])
 
+  // useEffect(() => {
+  //   async function getData2() {
+  //     const response2: Response = await fetch(fixUrl('/hamsters'))
+  //     const apiData2: any = await response2.json()
+  //     setAllHamstersData(apiData2 as Hamster[])
+  //   }
+  //   getData2()
+  // },[])
+
   let winWidth: number = 0
   let loseWidth: number = 0
   let winsDifference: number = 0
@@ -29,24 +63,18 @@ const Start = () => {
     winsDifference = hamsterData[0].wins - hamsterData[0].defeats
   }
 
-  let maybeData = 'null'
-
-  let hamsterId = '2222kjnkbbt'
-
-  console.log('imgName: ', hamsterData[0].imgName);
-
   return (
     <section className='start'>
       <div className='start-info'>
         <h1><span>Welcome to</span> <span><b>the Hamster Wars</b></span></h1>
         <p>Your number 1 go-to place when it comes to hamsters, hamster battles and all things cute. This website is dedicated to finding the cutest hamster of them all. And to do that, we're going to need <b>YOUR</b> help. </p>
       </div>
-      {maybeData ? <div className='winner'>
+      {hamsterData ? <div className='winner'>
         <p className='last-p'>{hamsterData[0].name} is our current winner:</p>
         <div className='most-winnerest'>
-          <Link to={'/gallery/' + hamsterId}><h2><img className='crown' src={fixUrl('/assets/' + 'crown.png')} alt='' />{hamsterData[0].name}, <span className='win-age'>age {hamsterData[0].age}</span></h2></Link>
+          <Link to={'/gallery/' + hamsterData[0].id}><h2><img className='crown' src={fixUrl('/assets/' + 'crown.png')} alt='' />{hamsterData[0].name}, <span className='win-age'>age {hamsterData[0].age}</span></h2></Link>
           <p>Win difference: {winsDifference} ({winWidth}% wins)</p>
-          <Link to={'/gallery/' + hamsterId}><img className='cutest-pic' src={fixUrl('/img/' + hamsterData[0].imgName)} alt='The cutest hamster of them all! (Best win ratio)' /></Link>
+          <Link to={'/gallery/' + hamsterData[0].id}><img className='cutest-pic' src={fixUrl('/img/' + hamsterData[0].imgName)} alt='The cutest hamster of them all! (Best win ratio)' /></Link>
           <div className='winnerest-info'>
               <p>Loves: {hamsterData[0].loves}</p>
               <p>Favorite food: {hamsterData[0].favFood}</p>

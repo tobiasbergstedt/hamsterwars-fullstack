@@ -1,0 +1,95 @@
+.statistics {
+	min-height: calc(
+		100vh - var(--header-height) - var(--footer-height) - 2 *
+			var(--main-padding)
+	);
+	padding: var(--main-padding);
+	color: var(--nav-hover-bg);
+}
+
+.statistics .winners p,
+.statistics .losers p {
+	margin-bottom: 1em;
+}
+
+.winners .winners-object,
+.losers .losers-object {
+	text-decoration: none;
+	display: flex;
+	align-items: center;
+	margin-bottom: 0.75em;
+	padding: 0.5em;
+	border-radius: 1em;
+	box-shadow: 0 0.35em 0.75em rgba(0, 0, 0, 0.7);
+	transition: transform 0.2s;
+}
+
+.winners .winners-object:hover,
+.losers .losers-object:hover {
+	transform: translateX(0.3em);
+	opacity: 0.9;
+}
+
+.winners .winners-object:nth-child(odd),
+.losers .losers-object:nth-child(even) {
+	background-color: var(--nav-bg);
+	color: var(--yellow);
+}
+
+.winners .winners-object:nth-child(even),
+.losers .losers-object:nth-child(odd) {
+	background-color: var(--header-bg);
+	color: black;
+}
+
+.winners .winners-object p:first-child,
+.losers .losers-object p:first-child {
+	font-size: 1.5em;
+	margin-bottom: 0.25em;
+}
+
+.winners .winners-object p,
+.losers .losers-object p {
+	font-size: 1.1em;
+}
+
+.winners-object .img-container,
+.losers-object .img-container {
+	width: 75px;
+	height: 75px;
+	border-radius: 50%;
+	overflow: hidden;
+	box-shadow: 0 0.3em 0.6em rgba(0, 0, 0, 0.7);
+}
+
+.winners-object:nth-child(odd) .img-container,
+.losers-object:nth-child(even) .img-container {
+	border: 2px solid var(--header-bg);
+}
+
+.winners-object:nth-child(even) .img-container,
+.losers-object:nth-child(odd) .img-container {
+	border: 2px solid var(--nav-hover-bg);
+}
+
+.winners-object .img-container img,
+.losers-object .img-container img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.winners .winners-object .statistics-container,
+.losers .losers-object .statistics-container {
+	height: 100%;
+	margin-left: 1em;
+}
+
+.winners .winners-object .statistics-container p:last-child,
+.losers .losers-object .statistics-container p:last-child {
+	margin-bottom: 0;
+}
+
+.losers {
+	margin-top: 1em;
+}

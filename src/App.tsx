@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 import { Navigate, Routes, Route } from 'react-router-dom'
 import Start from './components/start/Start'
@@ -11,8 +11,23 @@ import DropDown from './components/dropdown/Dropdown'
 import MyFooter from './components/footer/MyFooter'
 import SingleHamster from './components/gallery/SingleHamster'
 import Battle from './components/battle/Battle'
+import { useRecoilState } from 'recoil'
+import allHamstersAtom from './atoms/Hamsters'
+import { Hamster } from './models/Hamster'
+import { fixUrl } from './utils'
 
 const App = () => {
+  const [allHamstersData, setAllHamstersData] = useRecoilState<Hamster[]>(allHamstersAtom)
+
+  useEffect(() => {
+    async function getData() {
+      const response: Response = await fetch(fixUrl('/hamsters'))
+      const apiData: any = await response.json()
+      setAllHamstersData(apiData as Hamster[])
+    }
+    getData()
+  },[])
+
   return (
     <div className='app'>
       <header>

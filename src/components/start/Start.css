@@ -52,8 +52,7 @@
 	box-shadow: 0 0.35em 0.75em rgba(0, 0, 0, 0.7);
 }
 
-.start .most-winnerest a,
-.single-hamster .hamster-info {
+.start .most-winnerest a {
 	text-decoration: none;
 	color: var(--yellow);
 	transition: color 0.2s;
@@ -61,7 +60,7 @@
 
 .start .most-winnerest a:hover {
 	color: black;
-	transition: color 0.3s;
+	transition: color 0.2s;
 }
 
 .start .most-winnerest h2,
