@@ -1,5 +1,7 @@
 .single-hamster {
-	min-height: calc(100vh - var(--header-height) - var(--footer-height));
+	min-height: calc(
+		100vh - var(--header-height) - var(--footer-height) - var(--main-padding)
+	);
 	padding: 1em 1em 0 1em;
 }
 

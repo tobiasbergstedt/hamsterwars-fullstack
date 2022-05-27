@@ -2,14 +2,14 @@ import './Dropdown.css'
 import { fixUrl } from '../../utils'
 
 import { useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 const DropDown = () => {
   const [isNavExpanded, setIsNavExpanded] = useState(false)
 
   return (
     <>
-      <img src={fixUrl('/assets/' + 'header.png')} alt='Header image with Hamster Wars logo.' />
+      <Link to='/'><img src={fixUrl('/assets/' + 'header.png')} alt='Header image with Hamster Wars logo.' /></Link>
       <nav className='navigation'>
         <button className='hamburger' onClick={() => {
             setIsNavExpanded(!isNavExpanded);

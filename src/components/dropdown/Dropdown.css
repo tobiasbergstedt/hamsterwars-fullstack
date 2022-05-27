@@ -11,6 +11,12 @@ header img {
 	max-height: 100px;
 	max-width: 100%;
 	filter: drop-shadow(0.125rem 0.125rem 0.125rem rgba(34, 34, 34, 0.8));
+	transition: opacity 0.2s, transform 0.2s ease-in-out;
+}
+
+header img:hover {
+	opacity: 0.8;
+	transform: translateY(0.2em);
 }
 
 header nav a {

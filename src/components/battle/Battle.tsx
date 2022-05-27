@@ -61,9 +61,9 @@ const Battle = () => {
     setHasVoted(false)
   }
 
-  let maybe = null
+  let maybeButton = null
   if (hasVoted) {
-    maybe = <button className='button-yes new-game-button' onClick={getNewMatch}>Start a new match</button>
+    maybeButton = <button className='button-yes new-game-button' onClick={getNewMatch}>Start a new match</button>
   }
 
 
@@ -154,7 +154,7 @@ const Battle = () => {
       <h1>Choose your winner!</h1>
       <p>(i.e. Which one is cuter?)</p>
       {maybeWinner}
-      {maybe}
+      {maybeButton}
       {hamster !== null ? <BattleHamster hamster={hamster} setHasVoted={setHasVoted} hasVoted={hasVoted} setIsWinner={setIsWinner} /> : <div>No data yet.</div>}
       <img src={fixUrl('/assets/' + 'battle.svg')} alt='Battle symbol' className='battle-icon' />
       {hamster2 !== null ? <BattleHamster hamster={hamster2} setHasVoted={setHasVoted}  hasVoted={hasVoted}  setIsWinner={setIsWinner} /> : <div>No data yet.</div>}

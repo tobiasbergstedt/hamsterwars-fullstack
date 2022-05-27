@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react'
 import { Hamster } from '../../models/Hamster'
 import { fixUrl } from '../../utils'
 

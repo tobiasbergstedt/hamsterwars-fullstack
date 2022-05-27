@@ -2,38 +2,11 @@ import './Start.css'
 
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { useRecoilState, useRecoilValue } from 'recoil'
 
 import { fixUrl } from '../../utils'
 import { Hamster } from '../../models/Hamster'
-import allHamstersAtom from '../../atoms/Hamsters'
-import hamsterAtom from '../../atoms/SingleHamster'
 
 const Start = () => {
-  // const fakeHamster = { id: 'feiyuhg53487er587', name: 'Derek', age: 5, loves: 'basketball', favFood: 'carrots', imgName: 'hamster-12.jpg', games: 0, wins: 0, defeats: 0 }
-  // const [userRequest, setUserRequest] = useState({
-  //   cutest: [fakeHamster],
-  //   allHamsters: [fakeHamster],
-  // });
-
-  // useEffect(() => {
-  //   Promise.all([fetch(fixUrl('/hamsters/cutest')), fetch(fixUrl('/hamsters'))])
-  //     .then(async response => {
-  //       let cutest1 = await response[0].json()
-  //       let allHamsters1 = await response[1].json()
-  //       let result = [cutest1, allHamsters1]
-  //       return result
-  //     })
-  //     .then(results => {
-  //       setUserRequest({
-  //         cutest: results[0],
-  //         allHamsters: results[1],
-  //       });
-  //       console.log(userRequest.cutest);
-  //     });
-  // }, []);
-
-  // const [allHamstersData, setAllHamstersData] = useRecoilState<Hamster[]>(allHamstersAtom)
   const [hamsterData, setHamsterData] = useState<Hamster[] | null>(null)
 
   useEffect(() => {
@@ -44,15 +17,6 @@ const Start = () => {
     }
     getData()
   },[])
-
-  // useEffect(() => {
-  //   async function getData2() {
-  //     const response2: Response = await fetch(fixUrl('/hamsters'))
-  //     const apiData2: any = await response2.json()
-  //     setAllHamstersData(apiData2 as Hamster[])
-  //   }
-  //   getData2()
-  // },[])
 
   let winWidth: number = 0
   let loseWidth: number = 0

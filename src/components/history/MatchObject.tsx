@@ -31,7 +31,7 @@ const MatchObject = (props: Props) => {
               <div className='img-container'>
                 <img src={fixUrl(props.hamstersData !== null && props.hamstersData.filter((p) => p.id === props.winnerId)[0] !== undefined ? '/img/' + props.hamstersData.filter((p) => p.id === props.winnerId)[0].imgName : '/assets/no-hamster.png')} alt={'Image of' + (props.hamstersData !== null &&  props.hamstersData.filter((p) => p.id === props.winnerId)[0] !== undefined ? props.hamstersData.filter((p) => p.id === props.winnerId)[0].name : 'winner')} />
               </div>
-              <p>{props.hamstersData !== null && props.hamstersData.filter((p) => p.id === props.winnerId)[0] !== undefined ? props.hamstersData.filter((p) => p.id === props.winnerId)[0].name : props.winnerId}</p>
+              <p>{props.hamstersData !== null && props.hamstersData.filter((p) => p.id === props.winnerId)[0] !== undefined ? props.hamstersData.filter((p) => p.id === props.winnerId)[0].name : 'Deleted'}</p>
             </div>
             <div className='middle'>
               <p>vs</p>
@@ -41,7 +41,7 @@ const MatchObject = (props: Props) => {
               <div className='img-container'>
                 <img src={fixUrl(props.hamstersData !== null && props.hamstersData.filter((p) => p.id === props.loserId)[0] !== undefined ? '/img/' + props.hamstersData.filter((p) => p.id === props.loserId)[0].imgName : '/assets/no-hamster.png')} alt={'Image of' + (props.hamstersData !== null && props.hamstersData.filter((p) => p.id === props.loserId)[0] !== undefined ? props.hamstersData.filter((p) => p.id === props.loserId)[0].name : 'loser')} />
               </div>
-              <p>{props.hamstersData !== null && props.hamstersData.filter((p) => p.id === props.loserId)[0] !== undefined ? props.hamstersData.filter((p) => p.id === props.loserId)[0].name : props.loserId}</p>
+              <p>{props.hamstersData !== null && props.hamstersData.filter((p) => p.id === props.loserId)[0] !== undefined ? props.hamstersData.filter((p) => p.id === props.loserId)[0].name : 'Deleted'}</p>
             </div>
             <div className='remove-match' onClick={changeVisibility}>
               <p>X</p>

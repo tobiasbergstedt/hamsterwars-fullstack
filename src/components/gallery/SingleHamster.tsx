@@ -41,26 +41,6 @@ const SingleHamster = () => {
 
   let searchArray = [...allHamstersData]
 
-
-//   const getHamstersData = async () => {
-//     const response: Response = await fetch(fixUrl('/hamsters'))
-//       const apiData: any = await response.json()
-//       setHamstersData(apiData as Hamster[])
-//   }
-// console.log(allHamstersData);
-
-//   if (searchArray.length === undefined) {
-//     getHamstersData()
-//     console.log('Undefined');
-
-//   }
-
-//   if (hamstersData !== null) {
-//     searchArray = hamstersData
-//     console.log('Updated hamsters');
-
-//   }
-
   return (
     <div className='single-hamster'>
       <Link to={'/gallery'} className='arrow-back'>
@@ -93,8 +73,7 @@ const SingleHamster = () => {
       {matchData ? matchData.map((match: Match, index) => (
           <div key={match.id} className='single-match'>
             <p>Match number: {index + 1}</p>
-            <p>Winner: {searchArray.filter((p) => p.id === match.winnerId)[0] !== undefined ? searchArray.filter((p) => p.id === match.winnerId)[0].name : match.winnerId}</p>
-            <p>Loser: {searchArray.filter((p) => p.id === match.loserId)[0] !== undefined ? searchArray.filter((p) => p.id === match.loserId)[0].name : match.loserId}</p>
+            <p>Defeated: {searchArray.filter((p) => p.id === match.loserId)[0] !== undefined ? searchArray.filter((p) => p.id === match.loserId)[0].name : match.loserId}</p>
           </div>
         )) : <div className='single-match'>
         <p>No matches won.</p>
