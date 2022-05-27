@@ -26,13 +26,12 @@ const About = () => {
       setHamstersData(apiData as Hamster[])
     }
     getData()
-  },[])
+  },[matchesData])
 
   let removeContent = (id: string) => {
     let filteredMatches: Match[] | undefined = matchesData?.filter(match =>
       match.id !== id
     )
-
     setMatchesData(filteredMatches);
   }
 

@@ -1,6 +1,6 @@
 # Hamster Wars
 
-Fullstack app where you can vote for the cutest hamster, add new hamsters, and see statistics for all hamsters and battles.
+Fullstack app with the sole purpose of determining which is the cutest hamster in the world. Where you can vote for the cutest hamster in battles between two random hamsters, add new hamsters to the database, remove hamsters from the database and remove matches from the database. You can also see statistics for all hamsters and a full history of all battles ever fought.
 
 ### Frontend
 

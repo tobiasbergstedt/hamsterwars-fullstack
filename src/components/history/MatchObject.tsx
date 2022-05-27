@@ -17,10 +17,31 @@ const MatchObject = (props: Props) => {
 
   const changeVisibility = () => setIsVisible(!isVisible)
 
-  const handleRemoveMatch = () => {
+  const handleRemoveMatch = async() => {
     fetch(fixUrl('/matches/' + props.id), {
       method: 'DELETE'
     })
+    if (props.hamstersData !== null) {
+      let winningHamster = props.hamstersData.filter((p) => p.id === props.winnerId)[0]
+      let updatedWinningHamster = { ...winningHamster, wins: winningHamster.wins - 1, games: winningHamster.games - 1 }
+      await fetch(fixUrl('/hamsters/' + props.winnerId), {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(updatedWinningHamster)
+      })
+
+      let losingHamster = props.hamstersData.filter((p) => p.id === props.loserId)[0]
+      let updatedLosingHamster = { ...losingHamster, defeats: losingHamster.defeats - 1, games: losingHamster.games - 1 }
+      await fetch(fixUrl('/hamsters/' + props.loserId), {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(updatedLosingHamster)
+      })
+    }
     props.removeItem(props.id)
   }
 
