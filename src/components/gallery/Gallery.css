@@ -211,6 +211,13 @@
 }
 
 @media screen and (min-width: 768px) {
+	.gallery {
+		min-height: calc(
+			100vh - var(--header-height) - var(--footer-height) - 5 *
+				var(--main-padding)
+		);
+	}
+
 	.gallery .gallery-grid {
 		grid-template-columns: 1fr 1fr;
 	}

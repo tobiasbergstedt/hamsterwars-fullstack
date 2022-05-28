@@ -1,4 +1,6 @@
 .statistics {
+	display: flex;
+	flex-direction: column;
 	min-height: calc(
 		100vh - var(--header-height) - var(--footer-height) - 2 *
 			var(--main-padding)
@@ -92,4 +94,29 @@
 
 .losers {
 	margin-top: 1em;
+}
+
+@media screen and (min-width: 768px) {
+	.statistics {
+		min-height: calc(
+			100vh - var(--header-height) - var(--footer-height) - 5 *
+				var(--main-padding)
+		);
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	.statistics {
+		flex-direction: row;
+	}
+
+	.losers {
+		padding-left: 1em;
+		margin-top: 0;
+		width: 50%;
+	}
+	.winners {
+		padding-right: 1em;
+		width: 50%;
+	}
 }

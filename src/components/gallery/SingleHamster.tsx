@@ -28,7 +28,7 @@ const SingleHamster = () => {
       setMatchData(apiMatchData as Match[])
     }
     getData()
-  },[])
+  },[params.hamsterid])
 
   let winWidth: number = 0
   let loseWidth: number = 0
@@ -71,15 +71,14 @@ const SingleHamster = () => {
           <div className='match-info'>
           <h3>{hamsterData.name}'s wins:</h3>
       {matchData ? matchData.map((match: Match, index) => (
-          <div key={match.id} className='single-match'>
-            <p>Match number: {index + 1}</p>
+          <Link to={'/gallery/' + match.loserId} key={match.id} className='single-match'>
             <div className='match-defeated'>
               <p>Defeated: {searchArray.filter((p) => p.id === match.loserId)[0] !== undefined ? searchArray.filter((p) => p.id === match.loserId)[0].name : match.loserId}</p>
               <div className='image-container'>
                 <img src={searchArray.filter((p) => p.id === match.loserId)[0] !== undefined ? fixUrl('/img/' + searchArray.filter((p) => p.id === match.loserId)[0].imgName) : fixUrl('/assets/no-hamster.png')} alt='Image of defeated hamster' />
               </div>
             </div>
-          </div>
+          </Link>
         )) : <div className='single-match'>
         <p>No matches won.</p>
         </div>}

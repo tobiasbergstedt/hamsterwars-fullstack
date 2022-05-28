@@ -36,9 +36,11 @@ const Start = () => {
       {hamsterData ? <div className='winner'>
         <p className='last-p'>{hamsterData[0].name} is our current winner:</p>
         <div className='most-winnerest'>
-          <Link to={'/gallery/' + hamsterData[0].id}><h2><img className='crown' src={fixUrl('/assets/' + 'crown.png')} alt='' />{hamsterData[0].name}, <span className='win-age'>age {hamsterData[0].age}</span></h2></Link>
-          <p>Win difference: {winsDifference} ({winWidth}% wins)</p>
-          <Link to={'/gallery/' + hamsterData[0].id}><img className='cutest-pic' src={fixUrl('/img/' + hamsterData[0].imgName)} alt='The cutest hamster of them all! (Best win ratio)' /></Link>
+          <div className='hamster-info'>
+            <Link to={'/gallery/' + hamsterData[0].id}><h2><img className='crown' src={fixUrl('/assets/' + 'crown.png')} alt='' />{hamsterData[0].name}, <span className='win-age'>age {hamsterData[0].age}</span></h2></Link>
+            <p>Win difference: {winsDifference} ({winWidth}% wins)</p>
+            <Link to={'/gallery/' + hamsterData[0].id} className='cutest-pic'><img src={fixUrl('/img/' + hamsterData[0].imgName)} alt='The cutest hamster of them all! (Best win ratio)' /></Link>
+          </div>
           <div className='winnerest-info'>
               <p>Loves: {hamsterData[0].loves}</p>
               <p>Favorite food: {hamsterData[0].favFood}</p>
@@ -56,24 +58,24 @@ const Start = () => {
         </div>
       </div> :
       <div className='winner'>
-      <div className='most-winnerest'>
-        <h2><img className='crown' src={fixUrl('/assets/' + 'crown.png')} alt='' />?????, <span className='win-age'>age ?</span></h2>
-        <p>Win difference: ??? (?%)</p>
-        <img className='cutest-pic cutest-not-found' src={fixUrl('/assets/' + 'no-hamster.png')} alt='The cutest hamster of them all! (Best win ratio)' />
-        <div className='winnerest-info'>
-          <div className='reload'>
-            <p>Couldn't load hamster, server might be down. Wanna try again?</p>
-            <button className='button-no'>Reload hamster</button>
-          </div>
-          <div className='statistics-div'>
-            <p className='wins'>Wins: ?</p>
-            <p className='losses'>Losses: ?</p>
-          </div>
-          <div className='graph-div-2'>
+        <div className='most-winnerest'>
+          <h2><img className='crown' src={fixUrl('/assets/' + 'crown.png')} alt='' />?????, <span className='win-age'>age ?</span></h2>
+          <p>Win difference: ??? (?%)</p>
+          <img className='cutest-pic cutest-not-found' src={fixUrl('/assets/' + 'no-hamster.png')} alt='The cutest hamster of them all! (Best win ratio)' />
+          <div className='winnerest-info'>
+            <div className='reload'>
+              <p>Couldn't load hamster, server might be down. Wanna try again?</p>
+              <button className='button-no'>Reload hamster</button>
+            </div>
+            <div className='statistics-div'>
+              <p className='wins'>Wins: ?</p>
+              <p className='losses'>Losses: ?</p>
+            </div>
+            <div className='graph-div-2'>
+            </div>
           </div>
         </div>
-      </div>
-    </div>}
+      </div>}
 
       <div className='info-box'>
         <h3>How it all works:</h3>

@@ -54,6 +54,13 @@
 	box-shadow: #a2abc7 0 3px 7px inset;
 }
 
+.battle .battle-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+}
+
 .battle .hamster-object {
 	cursor: pointer;
 }
@@ -124,4 +131,19 @@
 .hamster-object .graph-div,
 .disabled-hamster .graph-div {
 	width: 90%;
+}
+
+@media screen and (min-width: 768px) {
+	.battle {
+		min-height: calc(
+			100vh - var(--header-height) - var(--footer-height) - 5 *
+				var(--main-padding)
+		);
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.battle .battle-container {
+		flex-direction: row;
+	}
 }

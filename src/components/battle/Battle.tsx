@@ -155,9 +155,11 @@ const Battle = () => {
       <p>(i.e. Which one is cuter?)</p>
       {maybeWinner}
       {maybeButton}
-      {hamster !== null ? <BattleHamster hamster={hamster} setHasVoted={setHasVoted} hasVoted={hasVoted} setIsWinner={setIsWinner} /> : <div>No data yet.</div>}
-      <img src={fixUrl('/assets/' + 'battle.svg')} alt='Battle symbol' className='battle-icon' />
-      {hamster2 !== null ? <BattleHamster hamster={hamster2} setHasVoted={setHasVoted}  hasVoted={hasVoted}  setIsWinner={setIsWinner} /> : <div>No data yet.</div>}
+      <div className='battle-container'>
+        {hamster !== null ? <BattleHamster hamster={hamster} setHasVoted={setHasVoted} hasVoted={hasVoted} setIsWinner={setIsWinner} /> : <div>No data yet.</div>}
+        <img src={fixUrl('/assets/' + 'battle.svg')} alt='Battle symbol' className='battle-icon' />
+        {hamster2 !== null ? <BattleHamster hamster={hamster2} setHasVoted={setHasVoted}  hasVoted={hasVoted}  setIsWinner={setIsWinner} /> : <div>No data yet.</div>}
+      </div>
     </div>
   )
 }
