@@ -2,7 +2,7 @@ import { collection, doc, deleteDoc } from 'firebase/firestore'
 
 import { db } from './firebase.js'
 
-async function deleteScript(toBeDeleted) {
+async function deleteMatches(toBeDeleted) {
 	const idToRemove = toBeDeleted
 
 	const colRef = collection(db, 'matches')
@@ -12,4 +12,4 @@ async function deleteScript(toBeDeleted) {
 	await deleteDoc(docRef)
 }
 
-export default deleteScript
+export default deleteMatches

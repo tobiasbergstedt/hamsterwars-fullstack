@@ -92,7 +92,7 @@ router.put('/:id', async (req, res) => {
 			return
 		}
 
-		updateMatches(newData)
+		await updateMatches(newData)
 		res.sendStatus(200)
 		return
 	}
@@ -113,7 +113,7 @@ router.delete('/:id', async (req, res) => {
 	matches = matches.filter((p) => p.id === toBeDeleted)
 
 	if (matches.length > 0) {
-		deleteMatches(toBeDeleted)
+		await deleteMatches(toBeDeleted)
 		res.sendStatus(200)
 		return
 	}
